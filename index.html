@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirate Demand</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        .flashing-text {
+            font-size: 3em;
+            font-weight: bold;
+            animation: flash 1s infinite alternate;
+        }
+
+        @keyframes flash {
+            0% { color: red; }
+            50% { color: yellow; }
+            100% { color: white; }
+        }
+        
+        .skull {
+            position: absolute;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="flashing-text">Surrendar All Yr Dablooons!</div>
+
+    <script>
+        function placeSkulls() {
+            for (let i = 0; i < 10; i++) {
+                let skull = document.createElement("div");
+                skull.innerHTML = "&#9760;"; // Skull and crossbones Unicode
+                skull.className = "skull";
+                skull.style.top = Math.random() * 90 + "vh";
+                skull.style.left = Math.random() * 90 + "vw";
+                document.body.appendChild(skull);
+            }
+        }
+        placeSkulls();
+    </script>
+</body>
+</html>
